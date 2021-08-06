@@ -1,0 +1,25 @@
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int t=0;
+        ListNode* t1= head;
+        ListNode* t2=head;
+        while(t1!=NULL)
+        {
+            t1=t1->next;
+            t++;
+        }
+        ListNode* t3= head;
+        while(t2->next != NULL && t2->next->next != NULL)
+        {
+            
+            t3=t3->next;
+            t2=t2->next->next;
+        }
+    
+        if(t%2 == 0)
+            return t3->next;
+        return t3;
+        
+    }
+};
