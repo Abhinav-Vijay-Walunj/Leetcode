@@ -1,0 +1,44 @@
+//https://leetcode.com/problems/reverse-string/
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        
+        int n=s.size();
+        char k;
+        for(int i=0;i<n;i++)
+        {
+            n--;
+            k=s[i];
+            s[i]=s[n];
+            s[n]=k;
+        }
+        for(int j=0;j<n;j++)
+        {
+            cout<<s[j]<<",";
+        }
+        
+    }
+};
+//or
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int st=0,e=s.size()-1;
+        char k;
+        while(st<e)
+        {
+            k=s[st];
+            s[st]=s[e];
+            s[e]=k;
+            st++;
+            e--;
+            
+        }
+        
+        for(int j=0;j<e+1;j++)
+        {
+            cout<<s[j]<<",";
+        }
+        
+    }
+};
