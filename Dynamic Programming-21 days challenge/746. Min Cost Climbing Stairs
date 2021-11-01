@@ -1,0 +1,27 @@
+//https://leetcode.com/problems/min-cost-climbing-stairs/
+class solution{
+public:
+     vector<int> dp;
+   
+    int solve(vector<int>&cost,int pos)
+    {
+        if(pos>=cost.size())
+             return 0;
+        if(dp[pos]!=INT_MAX)
+            return dp[pos];
+        
+            return dp[pos]=min(cost[pos]+solve(cost,pos+1),cost[pos]+solve(cost,pos+2));
+        
+        
+    }
+ 
+    int minCostClimbingStairs(vector<int>& cost) {
+       for(int i=0;i<cost.size();i++)
+       {
+           dp.push_back(INT_MAX);
+       }
+     
+        return min(solve(cost,0),solve(cost,1));
+    }
+    
+};
