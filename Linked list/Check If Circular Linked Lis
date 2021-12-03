@@ -1,0 +1,17 @@
+//https://practice.geeksforgeeks.org/problems/circular-linked-list/1/?category[]=Linked%20List&category[]=Linked%20List&problemType=functional&difficulty[]=-2&difficulty[]=-1&page=1&query=category[]Linked%20ListproblemTypefunctionaldifficulty[]-2difficulty[]-1page1category[]Linked%20List
+
+bool isCircular(Node *head)
+{
+    Node* s=head;
+    Node* f=head;
+    while(f != NULL && f->next != NULL)
+    {
+        s=s->next;
+        f=f->next->next;
+        if(s==f)
+            return true;
+        
+    }
+    return false;
+   // Your code here
+}
