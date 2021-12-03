@@ -1,0 +1,22 @@
+//https://practice.geeksforgeeks.org/problems/identical-linked-lists/1/?category[]=Linked%20List&category[]=Linked%20List&problemType=functional&difficulty[]=-2&difficulty[]=-1&page=1&query=category[]Linked%20ListproblemTypefunctionaldifficulty[]-2difficulty[]-1page1category[]Linked%20List
+
+bool areIdentical(struct Node *head1, struct Node *head2)
+{
+    struct Node* t1=head1;
+    struct Node* t2=head2;
+    while((t1!=NULL)&&(t2!=NULL))
+    {
+        
+        if(t1->data==t2->data)
+        {
+            t1=t1->next;
+            t2=t2->next;
+        }
+        else
+            return 0;
+            
+        
+    }
+    return 1;
+    // Code here
+}
