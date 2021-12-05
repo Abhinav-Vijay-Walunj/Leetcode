@@ -1,0 +1,15 @@
+//https://leetcode.com/problems/array-partition-i/
+
+int arrayPairSum(vector<int>& nums) {
+        int sum=0,n;
+        n=nums.size();
+    
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n;i=i+2)
+        {
+            sum+=nums[i];
+        }
+        
+        return sum;
+    }
+ /*here it alwaays be the pair of sorted array continuation and min will be first of them so we take sum of sorted array alternatively*/
