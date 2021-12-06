@@ -29,3 +29,4 @@ int minCostToMoveChips(vector<int>& position) {
         else 
             return a;
     }
+/*int his as when they are at even or odd then cost is zero. we try to bring them together, so we want difference between odd and even position and we take that by map and return it.
