@@ -1,0 +1,31 @@
+//https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/
+
+int minCostToMoveChips(vector<int>& position) {
+        int n=position.size();
+        if(n == 1)
+            return 0;
+        
+            
+        unordered_map<int,int> mp;
+        
+        for(int i=0;i<n;i++)
+        {
+            if(mp.find(position[i]) == mp.end())
+                mp[position[i]]=1;
+            else
+                mp[position[i]]++;
+        }
+        unordered_map<int, int>:: iterator p;
+        int a=0,b=0;
+        for(auto p:mp)
+        {
+            if((p.first)%2 == 0)
+                a+=p.second;
+            else
+                b+=p.second;
+        }
+        if(a>b)
+            return b;
+        else 
+            return a;
+    }
