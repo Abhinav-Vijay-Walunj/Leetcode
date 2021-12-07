@@ -1,0 +1,16 @@
+//https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+
+int getDecimalValue(ListNode* head) {
+        int res=0;
+        ListNode* temp=head;
+        
+        while(temp != NULL)
+        {
+            res=res*2;
+            res+=temp->val;
+            temp=temp->next;
+        }
+        
+        return res;
+        
+    }
