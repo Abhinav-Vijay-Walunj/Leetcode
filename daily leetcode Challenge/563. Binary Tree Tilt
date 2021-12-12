@@ -1,0 +1,22 @@
+class Solution {
+    int diff=0;
+public:
+    int findTilt(TreeNode* root) {
+        fun(root);
+        return diff;
+    }
+    int fun(TreeNode* root)
+    {
+        if(root == NULL)
+            return 0;
+        if((root->left == NULL)&&(root->right == NULL))
+            return root->val;
+        int l=fun(root->left);
+        int r=fun(root->right);
+        
+        diff=diff+abs(l-r);
+       
+        return l+r+root->val;
+
+    }
+};
