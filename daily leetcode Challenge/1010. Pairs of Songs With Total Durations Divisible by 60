@@ -1,0 +1,26 @@
+int numPairsDivisibleBy60(vector<int>& time) {
+        int c=0;
+        int n=time.size();
+        map<int,int> mp;
+        for(int i=0;i<n;i++)
+        {
+            mp[time[i]%60]++;
+        }
+        for(auto &x:mp)
+        {
+            if(x.first == 0)
+            {
+                c+=(x.second*(x.second-1))/2;
+            }
+            else if(x.first == 30)
+            {
+                c+=(x.second*(x.second-1))/2;
+            }
+            else
+            {
+                c += mp[60-x.first]*x.second;
+            }
+            x.second=0;
+        }
+        return c;
+    }
