@@ -5,7 +5,7 @@ public:
         unordered_map<int, int> mp{{0, -1}};
         
         for(int i=0; i<nums.size(); i++){
-            sum += nums[i]==1 ? 1 : -1;
+            sum += nums[i]==1 ? 1 : -1;//if value of nums[i] is 1 then increment else decrement
             if(mp.count(sum)) maxLen = max(maxLen, i-mp[sum]);
             else mp[sum] = i;
         }
