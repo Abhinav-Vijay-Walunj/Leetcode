@@ -11,6 +11,22 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+        
+        if(head == NULL || head->next == NULL)
+        {
+            return head;
+        }
+        
+        ListNode* ans=reverseList(head->next);
+        ListNode* headnext=head->next;
+        head->next->next=head;
+        
+        head->next=NULL;
+        
+        return ans;
+    }
+        
+        /*
         ListNode* curr=head;
         ListNode* prev=NULL;
         
@@ -24,21 +40,7 @@ public:
         return prev;
         
     }
-    /*
-        ListNode* dummy=NULL;//to store prev node
-        ListNode* temp=NULL;//to store
-        while(head!=NULL)
-        {
-            //dummy=head;
-            temp=head->next;
-            head->next=dummy;
-            dummy=head;
-            head=temp;
-            
-            
-        }
-        return dummy;
-        
+    
         */
         
     
